@@ -1,0 +1,96 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "content"
+    label: "Contenu du Site"
+    delete: false
+    create: false
+    files:
+      - file: "content.json"
+        label: "Page d'accueil"
+        name: "homepage"
+        fields:
+          - label: "Bloc 1 - Intro"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge Session", name: "badge", widget: "string" }
+              - { label: "Titre Principal", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Texte Bouton", name: "cta", widget: "string" }
+
+          - label: "Bloc 2 - Présentation"
+            name: "adn"
+            widget: "object"
+            fields:
+              - { label: "Titre de Section", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image d'illustration", name: "image", widget: "image" }
+
+          - label: "Bloc 3 - Galerie Photos"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Titre de Section", name: "title", widget: "string" }
+              - { label: "Images", name: "images", widget: "list", field: { label: "Image", name: "img", widget: "image" } }
+
+          - label: "Bloc 4 - Les Avantages"
+            name: "advantages"
+            widget: "object"
+            fields:
+              - { label: "Titre de Section", name: "title", widget: "string" }
+              - label: "Liste des avantages"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Icone", name: "icon", widget: "string" }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Bloc 5 - Le Staff"
+            name: "staff"
+            widget: "object"
+            fields:
+              - { label: "Titre de Section", name: "title", widget: "string" }
+              - label: "Membres du staff"
+                name: "members"
+                widget: "list"
+                fields:
+                  - { label: "Rôle", name: "role", widget: "string" }
+                  - { label: "Nom", name: "name", widget: "string" }
+                  - { label: "Prise", name: "grip", widget: "string" }
+                  - { label: "Style", name: "style", widget: "string" }
+                  - { label: "Classement", name: "rank", widget: "string" }
+
+          - label: "Bloc 6 - Réseaux Sociaux"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Titre de Section", name: "title", widget: "string" }
+              - label: "Liste des Réseaux"
+                name: "links"
+                widget: "list"
+                fields:
+                  - label: "Choisir le réseau"
+                    name: "platform"
+                    widget: "select"
+                    options: ["Facebook", "Instagram", "YouTube", "Tiktok"]
+                  - { label: "Lien complet (URL)", name: "url", widget: "string" }
+
+          - label: "Bloc 7 - Nos Partenaires"
+            name: "partners"
+            widget: "object"
+            fields:
+              - { label: "Titre de Section", name: "title", widget: "string" }
+              - label: "Liste des Partenaires"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Nom du Partenaire", name: "name", widget: "string" }
+                  - { label: "Logo (Image)", name: "logo", widget: "image" }
+                  - { label: "Lien (URL)", name: "url", widget: "string", required: false }

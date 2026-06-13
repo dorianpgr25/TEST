@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISONS ELITE - Stage Tennis de Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+    <div id="google_translate_element" style="visibility:hidden;position:absolute;top:-9999px;"></div>
+    <nav class="lang-selector">
+        <button class="lang-btn" onclick="translateInstant('fr')">FR 🇫🇷</button>
+        <button class="lang-btn" onclick="translateInstant('en')">EN 🇬🇧</button>
+        <button class="lang-btn" onclick="translateInstant('es')">ES 🇪🇸</button>
+        <button class="lang-btn" onclick="translateInstant('zh-CN')">CN 🇨🇳</button>
+        <button class="lang-btn" onclick="translateInstant('zh-TW')">HK 🇭🇰</button>
+    </nav>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <span id="hero-badge" class="bisons-badge">...</span>
+                <h1 id="hero-title" class="hero-title">...</h1>
+                <p id="hero-description" class="hero-description">...</p>
+                <button id="hero-cta" class="bisons-button">...</button>
+            </div>
+            <div class="hero-visual">
+                <img src="https://instagram.fcdg4-1.fna.fbcdn.net/v/t51.2885-19/465397874_1565951647620583_4681574217412429060_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby44MjguYzIifQ&_nc_ht=instagram.fcdg4-1.fna.fbcdn.net&_nc_cat=107&_nc_oc=Q6cZ2gHDrITLoWgV_AUWkO9WFxT9FgCudUIyXvcFsUZJQNvCNDXWrol61Z5qPDev1B5Gpfd48yB3YPqlnp2CVCXrWYX5&_nc_ohc=pKuP2gKDxagQ7kNvwEQxBNl&_nc_gid=0TX3CsmZhMI_kGTCNvFIpQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af8vZSR0P6BiS2tAdkW176msxlqtbjjBvt28NK07rH4fLQ&oe=6A30C8DF&_nc_sid=8b3546" class="bisons-logo-img" alt="Logo Bisons">
+            </div>
+        </section>
+        <section class="adn-section">
+            <div class="adn-grid">
+                <div class="adn-content">
+                    <h2 id="adn-title" class="section-title">...</h2>
+                    <p id="adn-text" class="adn-text">...</p>
+                </div>
+                <div class="adn-visual"><img id="adn-image" src="" class="robust-img"></div>
+            </div>
+        </section>
+        <section class="gallery-section">
+            <h2 id="gallery-title" class="section-title text-center">...</h2>
+            <div id="gallery-grid" class="gallery-grid"></div>
+        </section>
+        <section class="advantages-section">
+            <h2 id="advantages-title" class="section-title text-center">...</h2>
+            <div id="advantages-grid" class="grid-container"></div>
+        </section>
+        <section class="staff-section">
+            <h2 id="staff-title" class="section-title text-center">...</h2>
+            <div id="staff-grid" class="staff-grid"></div>
+        </section>
+        <section class="partners-section">
+            <h2 id="partners-title" class="section-title text-center">...</h2>
+            <div id="partners-grid" class="partners-grid"></div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fonction utilitaire pour injecter du texte ou une chaîne vide si absent
+            const setT = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val || ''; };
+
+            fetch('./content.json')
+                .then(res => res.json())
+                .then(data => {
+                    setT('hero-badge', data.hero?.badge);
+                    setT('hero-title', data.hero?.title);
+                    setT('hero-description', data.hero?.description);
+                    setT('hero-cta', data.hero?.cta);
+                    setT('adn-title', data.adn?.title);
+                    setT('adn-text', data.adn?.description);
+                    document.getElementById('adn-image').src = data.adn?.image || '';
+
+                    setT('gallery-title', data.gallery?.title);
+                    document.getElementById('gallery-grid').innerHTML = (data.gallery?.images || [])
+                        .map(img => `<div class="gallery-item"><img src="${img}" class="robust-img"></div>`).join('');
+
+                    setT('advantages-title', data.advantages?.title);
+                    document.getElementById('advantages-grid').innerHTML = (data.advantages?.items || [])
+                        .map(item => `<div class="advantage-card"><div class="card-icon">${item.icon}</div><h3 class="card-title">${item.title}</h3><p class="card-desc">${item.description}</p></div>`).join('');
+
+                    setT('staff-title', data.staff?.title);
+                    document.getElementById('staff-grid').innerHTML = (data.staff?.members || [])
+                        .map(c => `<div class="staff-card"><span class="staff-role">${c.role}</span><h3 class="staff-name">${c.name}</h3><div class="staff-stats"><div class="stat-row"><span class="stat-label">Prise</span><span>${c.grip}</span></div><div class="stat-row"><span class="stat-label">Style</span><span>${c.style}</span></div><div class="stat-row highlight"><span class="stat-label">Classement</span><span>${c.rank}</span></div></div></div>`).join('');
+
+                    // --- INJECTION DES PARTENAIRES ---
+                    document.getElementById('partners-title').textContent = data.partners?.title || 'Nos Partenaires';
+                    document.getElementById('partners-grid').innerHTML = (data.partners?.items || [])
+                        .map(p => `
+                            <a href="${p.url || '#'}" target="_blank" rel="noopener noreferrer" class="partner-item">
+                                <img src="${p.logo}" alt="${p.name}" title="${p.name}">
+                            </a>`).join('');
+
+                    // --- INJECTION DYNAMIQUE DES RÉSEAUX SOCIAUX ---
+                    setT('social-title', data.social?.title || 'Suivez-nous');
+                    const socialIconsContainer = document.getElementById('social-icons-container');
+
+                    const iconMapping = {
+                        'facebook': 'fa-brands fa-facebook',
+                        'instagram': 'fa-brands fa-instagram',
+                        'youtube': 'fa-brands fa-youtube',
+                        'tiktok': 'fa-brands fa-tiktok'
+                    };
+                    socialIconsContainer.innerHTML = (data.social?.links || []).map(link => {
+                        const platformKey = link.platform.toLowerCase();
+                        const iconClass = iconMapping[platformKey] || 'fa-solid fa-link';
+                        return `
+                            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-link ${platformKey}">
+                                <i class="${iconClass}"></i>
+                            </a>`;
+                    }).join('');
+                    // --- FIN DES RÉSEAUX SOCIAUX ---
+
+                    const script = document.createElement('script');
+                    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+                    document.body.appendChild(script);
+                });
+        });
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'fr', includedLanguages: 'fr,en,es,zh-CN,zh-TW'}, 'google_translate_element');
+            setTimeout(() => {
+                let savedLang = localStorage.getItem('bisons-lang');
+                if (savedLang && savedLang !== 'fr') translateInstant(savedLang);
+            }, 300);
+        }
+        function translateInstant(langCode) {
+            localStorage.setItem('bisons-lang', langCode);
+
+            // Mise à jour visuelle des boutons (CSS Active)
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('onclick').includes(`'${langCode}'`)) btn.classList.add('active');
+            });
+
+            if (langCode === 'fr') {
+                // Supprime le cookie de traduction de Google pour forcer le retour au français original
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname;
+                location.reload();
+                return;
+            }
+            const select = document.querySelector('.goog-te-combo');
+            if (select) { select.value = langCode; select.dispatchEvent(new Event('change')); }
+        }
+    </script>
+    <footer class="footer-social">
+       <h3 id="social-title"></h3>
+       <div id="social-icons-container"></div>
+    </footer>
+</body>
+</html>
