@@ -1,0 +1,5 @@
+[build]
+  # On vide la commande pour ne plus avoir l'erreur "cecil command not found"
+  command = ""
+  # On publie les fichiers à la racine (là où se trouve ton index.html normalement)
+  publish = "."
