@@ -45,6 +45,10 @@
       {
         "platform": "YouTube",
         "url": "https://www.youtube.com/@VibrayeASTT"
+      },
+      {
+        "platform": "Tiktok",
+        "url": "https://www.tiktok.com/fr/"
       }
     ]
   },
@@ -58,33 +62,28 @@
       },
       {
         "name": "LA BARAQUE (Connerré)",
-        "logo": "https://instagram.fcdg4-1.fna.fbcdn.net/v/t51.2885-19/429566208_265143436628123_4824912575631443098_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby45OTIuYzIifQ&_nc_ht=instagram.fcdg4-1.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2gGQG7NmJKXqbZGayrWvGsrvfEarYyoCDQ__d6fgQC2noxJk0stsFPW48QPSsZbzSgGlGYyNGDT_s31vyWmxY9uS&_nc_ohc=olBPzjfdzEgQ7kNvwFfB5lB&_nc_gid=HOy__EFo49Em2NGzB4QHvQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Af-qLGtc7at2Xf9Uu8MIaRd4l5PafObOp2OqQGvTN93rTA&oe=6A3355A5&_nc_sid=7a9f4b",
+        "logo": "/images/logo-la-baraque.jpg",
         "url": "https://www.instagram.com/labaraque_connerre/"
       },
       {
-        "name": "Partenaire 3",
-        "logo": "https://via.placeholder.com/150",
-        "url": "https://example.com"
+        "name": "GAUTHIER TRAITEUR",
+        "logo": "https://www.pagesjaunes.fr/media/newdam/preset-export-large/d1/00/7d/00/00/69/19/16/35/d3/62d7d1007d000069191635d3/62d7d1007d000069191635d4.png",
+        "url": "https://www.gauthier-traiteur.fr/"
       },
       {
-        "name": "Partenaire 4",
-        "logo": "https://via.placeholder.com/150",
-        "url": "https://example.com"
+        "name": "ESNAULT ASSURANCE",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAjOcIyfItv-pz-JkxrAuLUhQqwhsWWb-ZhA&s",
+        "url": ""
       },
       {
-        "name": "Partenaire 5",
-        "logo": "https://via.placeholder.com/150",
-        "url": "https://example.com"
+        "name": "BOULANGERIE ANGE",
+        "logo": "https://www.boulangerie-ange.fr/wp-content/uploads/2024/01/logo-angex2.png",
+        "url": "https://www.boulangerie-ange.fr/stores/boulangerie-ange-la-ferte-bernard/?utm_source=google&utm_medium=organic&utm_campaign=mybusiness-website"
       },
       {
-        "name": "Partenaire 6",
-        "logo": "https://via.placeholder.com/150",
-        "url": "https://example.com"
-      },
-      {
-        "name": "Partenaire 7",
-        "logo": "https://via.placeholder.com/150",
-        "url": "https://example.com"
+        "name": "TALIAPLAST",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQavj8WVlwlX-5oXlghAH8mmHkKB9_TsmNIX3snMlzJPw&s=10",
+        "url": "https://www.taliaplast.com/fr"
       }
     ]
   }
