@@ -257,8 +257,8 @@ body { position: static !important; }
     align-items: center; 
     margin-top: 40px; 
 }
-.partner-item { max-width: 160px; filter: grayscale(1); transition: all 0.3s ease; opacity: 0.6; }
-.partner-item:hover { filter: grayscale(0); opacity: 1; transform: scale(1.1); }
+.partner-item { max-width: 160px; transition: all 0.3s ease; }
+.partner-item:hover { transform: scale(1.1); }
 .partner-item img { width: 100%; height: auto; display: block; }
 
 @media (max-width: 768px) {
