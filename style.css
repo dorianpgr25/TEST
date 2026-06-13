@@ -1,0 +1,336 @@
+/* ==========================================================================
+   CHARTE GRAPHISME VERITABLE : BISONS ELITE (NOIR / OR / BLANC)
+   ========================================================================== */
+:root {
+    --bisons-black: #0D0D0D;    /* Noir de fond brut */
+    --bisons-dark: #1A1A1A;     /* Noir de carte */
+    --bisons-gold: #F2B705;     /* Jaune Or officiel des Bisons */
+    --bisons-white: #FFFFFF;    /* Blanc pur marquages */
+    --text-gray: #A6A6A6;       /* Gris de lecture */
+    --font-impact: 'Oswald', sans-serif;
+    --font-clean: 'Montserrat', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bisons-black);
+    color: var(--bisons-white);
+    font-family: var(--font-clean);
+    overflow-x: hidden;
+    line-height: 1.5;
+    top: 0 !important;
+}
+
+/* Masquage strict des barres Google Translate */
+#google_translate_element, .skiptranslate iframe, .goog-te-banner-frame, #goog-te-tt {
+    display: none !important;
+}
+body { position: static !important; }
+
+/* ==========================================================================
+   INTERFACES / COMPOSANTS NAV
+   ========================================================================== */
+.lang-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+    background: var(--bisons-dark);
+    padding: 6px 12px;
+    border: 2px solid var(--bisons-gold);
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: calc(100vw - 40px);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--bisons-white);
+    font-family: var(--font-impact);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 4px 6px;
+    transition: color 0.2s;
+}
+
+.lang-btn:hover {
+    color: var(--bisons-gold);
+}
+
+.lang-btn.active {
+    color: var(--bisons-gold);
+    border-bottom: 2px solid var(--bisons-gold);
+}
+
+/* ==========================================================================
+   BLOCS DE CONTENU (ROBUSTES ET INCASSABLES)
+   ========================================================================== */
+.section-title {
+    font-family: var(--font-impact);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    text-transform: uppercase;
+    color: var(--bisons-white);
+    border-left: 6px solid var(--bisons-gold);
+    padding-left: 15px;
+    margin-bottom: 45px;
+    letter-spacing: -0.01em;
+}
+
+.text-center { text-align: center; border-left: none; padding-left: 0; }
+
+.robust-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- BLOC 1 : HERO SHOCK --- */
+.hero-section {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 120px 6% 60px 6%;
+    gap: 40px;
+    border-bottom: 3px solid var(--bisons-gold);
+}
+
+@media (min-width: 992px) {
+    .hero-section { grid-template-columns: 1.2fr 0.8fr; }
+}
+
+.bisons-badge {
+    background-color: var(--bisons-gold);
+    color: var(--bisons-black);
+    font-family: var(--font-impact);
+    padding: 6px 16px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.hero-title {
+    font-family: var(--font-impact);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    color: var(--text-gray);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.bisons-button {
+    background: none;
+    color: var(--bisons-gold);
+    border: 3px solid var(--bisons-gold);
+    font-family: var(--font-impact);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.bisons-button:hover {
+    background-color: var(--bisons-gold);
+    color: var(--bisons-black);
+}
+
+.bisons-logo-text {
+    font-family: var(--font-impact);
+    font-size: clamp(6rem, 15vw, 12rem);
+    color: rgba(255, 255, 255, 0.03);
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1;
+    user-select: none;
+    display: block;
+    text-align: center;
+    border: 1px solid rgba(242, 183, 5, 0.05);
+    padding: 20px;
+}
+
+/* --- BLOC 2 : ADN --- */
+.adn-section { padding: 100px 6%; }
+.adn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .adn-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.adn-text {
+    color: var(--text-gray);
+    font-size: 1.15rem;
+}
+
+.adn-visual {
+    width: 100%;
+    aspect-ratio: 16/10;
+    border: 3px solid var(--bisons-dark);
+}
+
+/* --- BLOC 3 : GALERIE --- */
+.gallery-section { padding: 100px 6%; background-color: var(--bisons-dark); }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    aspect-ratio: 4/3;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s;
+}
+
+.gallery-item:hover { border-color: var(--bisons-gold); }
+
+/* --- BLOC 4 : AVANTAGES --- */
+.advantages-section { padding: 100px 6%; }
+.advantages-section .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.advantage-card {
+    background-color: var(--bisons-dark);
+    padding: 35px 25px;
+    border-top: 4px solid var(--bisons-gold);
+}
+
+.card-icon { font-size: 2rem; margin-bottom: 15px; }
+.card-title { font-family: var(--font-impact); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 10px; color: var(--bisons-gold); }
+.card-desc { color: var(--text-gray); }
+
+/* --- BLOC 5 : STAFF --- */
+.staff-section { padding: 100px 6% 140px 6%; background-color: var(--bisons-dark); }
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.staff-card {
+    background-color: var(--bisons-black);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.staff-role { font-size: 0.85rem; color: var(--bisons-gold); text-transform: uppercase; font-weight: bold; display: block; margin-bottom: 5px; }
+.staff-name { font-family: var(--font-impact); font-size: 2rem; text-transform: uppercase; margin-bottom: 20px; }
+.staff-stats { display: flex; flex-direction: column; gap: 8px; }
+.stat-row { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 5px; }
+.stat-label { color: var(--text-gray); font-size: 0.8rem; text-transform: uppercase; }
+.stat-value { font-weight: bold; }
+.stat-row.highlight { border-bottom-color: var(--bisons-gold); }
+.stat-row.highlight .stat-value { color: var(--bisons-gold); }
+
+/* --- BLOC 7 : PARTENAIRES --- */
+.partners-section { padding: 80px 6%; text-align: center; }
+.partners-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 50px; 
+    align-items: center; 
+    margin-top: 40px; 
+}
+.partner-item { max-width: 160px; filter: grayscale(1); transition: all 0.3s ease; opacity: 0.6; }
+.partner-item:hover { filter: grayscale(0); opacity: 1; transform: scale(1.1); }
+.partner-item img { width: 100%; height: auto; display: block; }
+
+@media (max-width: 768px) {
+    .partners-grid { gap: 30px; }
+    .partner-item { max-width: 120px; }
+}
+
+/* =========================================
+   STYLE DU FOOTER RÉSEAUX SOCIAUX (BISONS)
+   ========================================= */
+
+.footer-social {
+  text-align: center;
+  padding: 80px 20px; 
+  background-color: #1a1a1a; 
+  border-top: 4px solid #cc0000; 
+  margin-top: 50px;
+}
+
+#social-title {
+  font-family: 'Oswald', sans-serif; 
+  font-size: 3rem; 
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 40px; 
+  letter-spacing: 2px;
+}
+
+#social-icons-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 50px; 
+  flex-wrap: wrap; 
+}
+
+.social-link {
+  font-size: 80px; 
+  color: #ffffff; 
+  transition: all 0.3s ease-in-out; 
+  text-decoration: none;
+  display: inline-block;
+}
+
+.social-link:hover {
+  transform: scale(1.2) rotate(5deg); 
+}
+
+.social-link.facebook:hover {
+  color: #1877F2; 
+}
+
+.social-link.instagram:hover {
+  color: #E4405F; 
+}
+
+.social-link.youtube:hover {
+  color: #FF0000; 
+}
+
+.social-link.tiktok:hover {
+  color: #0f0b0b; 
+}
+
+@media (max-width: 768px) {
+  #social-title {
+    font-size: 2rem;
+  }
+  .social-link {
+    font-size: 60px; 
+  }
+  #social-icons-container {
+    gap: 30px;
+  }
+}
