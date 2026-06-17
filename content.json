@@ -60,14 +60,14 @@
     "title": "Ils nous soutiennent",
     "items": [
       {
-        "name": "SARL PAINEAU TORTEVOIE",
-        "logo": "https://paineau-tortevoie.com/wp-content/uploads/2022/04/LOGO-1-980x428.png",
-        "url": "https://paineau-tortevoie.com/"
-      },
-      {
         "name": "LA BARAQUE (Connerré)",
         "logo": "/images/logo-la-baraque.jpg",
         "url": "https://www.instagram.com/labaraque_connerre/"
+      },
+      {
+        "name": "SARL PAINEAU TORTEVOIE",
+        "logo": "https://paineau-tortevoie.com/wp-content/uploads/2022/04/LOGO-1-980x428.png",
+        "url": "https://paineau-tortevoie.com/"
       },
       {
         "name": "GAUTHIER TRAITEUR",
