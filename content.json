@@ -3,7 +3,7 @@
     "badge": "Vibraye 2026 \"LES BISONS VIBRAYSIENS\"",
     "title": "AU COEUR DE NOTRE STAGE",
     "description": "Expérience unique en compagnie de champions renommés en la matière",
-    "cta": "EN SAVOIR PLUS"
+    "cta": ".."
   },
   "adn": {
     "title": "L'Exigence des Bisons",
@@ -29,15 +29,7 @@
   },
   "staff": {
     "title": "Le Corps Enseignant",
-    "members": [
-      {
-        "role": "PONGISTE",
-        "name": "Dorian",
-        "grip": "informatique",
-        "style": "attaque",
-        "rank": "560"
-      }
-    ]
+    "members": []
   },
   "social": {
     "title": "Suivez les Bisons !",
