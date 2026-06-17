@@ -29,7 +29,15 @@
   },
   "staff": {
     "title": "Le Corps Enseignant",
-    "members": []
+    "members": [
+      {
+        "role": "PONGISTE",
+        "name": "Dorian",
+        "grip": "informatique",
+        "style": "attaque",
+        "rank": "560"
+      }
+    ]
   },
   "social": {
     "title": "Suivez les Bisons !",
