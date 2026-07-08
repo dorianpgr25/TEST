@@ -29,7 +29,15 @@
   },
   "staff": {
     "title": "Le Corps Enseignant",
-    "members": []
+    "members": [
+      {
+        "role": "Manager",
+        "name": "Damien Provost ",
+        "rank": "Urr",
+        "grip": "Hdj",
+        "style": "Dkek"
+      }
+    ]
   },
   "social": {
     "title": "Suivez les Bisons !",
